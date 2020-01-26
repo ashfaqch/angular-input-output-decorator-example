@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ChildComponent } from './child.component';
 
 @Component({
-	selector: 'app-parent',
-	templateUrl: './parent.component.html'
+    selector: 'app-parent',
+    templateUrl: './parent.component.html'
 })
 export class ParentComponent {
-	public listOfCountry = [ 'Canada', 'England', 'Mexico' ];
-	public selectedCountry = "";
+    @ViewChild(ChildComponent) childComponent: ChildComponent;
+    public listOfCountry = ['Canada', 'England', 'Mexico'];
+    public selectedCountry = '';
 
-	showSelectedCountry(country) {
-		this.selectedCountry = country;
-	}
-} 
+    showSelectedCountry(country) {
+        this.selectedCountry = country;
+    }
+}

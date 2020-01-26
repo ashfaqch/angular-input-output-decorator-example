@@ -3,7 +3,8 @@
     <div class="panel-body">
         <div class="form-group">
             <label for="countryName">Selected Country: </label>
-            <span>{{ selectedCountry }}</span>
+            <p>Data from child component with EventEmitter:  <span style="color: red; font-weight: bold;">{{ selectedCountry }}</span></p>
+            <p>Data from child component with ViewChild: <span style="color: red; font-weight: bold;">{{ childComponent.selectedCountryVariable2  }}</span></p>
         </div>
     </div>
 </div>
@@ -11,6 +12,6 @@
 <div class="panel panel-success">
     <div class="panel-heading">Child Component</div>
     <div class="panel-body">
-        <app-child [inputCountries]="listOfCountry" (outputSelectedCountry)="showSelectedCountry($event)"></app-child>
+        <app-child [countries]="listOfCountry" (selectedCountryVariable1)="showSelectedCountry($event)"></app-child>
     </div>
 </div>
